@@ -1,0 +1,2 @@
+# atividadelp1
+Esse projeto está relacionado as atividades de linguagem de programação do 4º bimestre, que serão serem entregues ao professor Ivan Paulino.
