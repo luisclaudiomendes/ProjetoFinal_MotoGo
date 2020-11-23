@@ -15,5 +15,6 @@ public class Mezaque {
         System.out.println("Luís Cláudio");
         System.out.println("Gabrièlle");
         System.out.println("Flávia");
+        System.out.println("Laura");
     }
 }
