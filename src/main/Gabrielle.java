@@ -7,12 +7,10 @@ package main;
 
 /**
  *
- * @author Família Rodrigues
+ * @author Gabrielle
  */
-public class Mezaque {
+public class Gabrielle {
     public static void main(String[] args) {
-        System.out.println("Mezaque");
-        System.out.println("Luís Cláudio");
-        System.out.println("Gabrièlle");
+        System.out.println("Gabrielle");
     }
 }
