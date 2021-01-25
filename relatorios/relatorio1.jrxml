@@ -62,15 +62,15 @@ FROM
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="592f990e-6f4d-4903-ae11-4df60b7158f0"/>
+				<reportElement style="Column header" x="113" y="19" width="139" height="15" uuid="592f990e-6f4d-4903-ae11-4df60b7158f0"/>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="ac9dd171-6ebe-4166-b7d3-074e7954b3d7"/>
+				<reportElement style="Column header" x="252" y="19" width="138" height="15" uuid="ac9dd171-6ebe-4166-b7d3-074e7954b3d7"/>
 				<text><![CDATA[CPF]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="9e51769e-57ea-42cb-a025-de1ea247cb4c"/>
+				<reportElement style="Column header" x="390" y="21" width="138" height="15" uuid="9e51769e-57ea-42cb-a025-de1ea247cb4c"/>
 				<text><![CDATA[Endereço]]></text>
 			</staticText>
 		</band>
@@ -84,19 +84,19 @@ FROM
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="eb0658ab-9585-4c6e-938a-4c411c5c16dd"/>
+				<reportElement style="Detail" x="0" y="0" width="66" height="15" uuid="eb0658ab-9585-4c6e-938a-4c411c5c16dd"/>
 				<textFieldExpression><![CDATA[$F{idcliente}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="4c360ec6-20c3-41eb-a57e-f224be4a0256"/>
+				<reportElement style="Detail" x="113" y="0" width="163" height="15" uuid="4c360ec6-20c3-41eb-a57e-f224be4a0256"/>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="f99e4dd6-04e4-4202-a4c6-471b12f54bf5"/>
+				<reportElement style="Detail" x="252" y="0" width="162" height="15" uuid="f99e4dd6-04e4-4202-a4c6-471b12f54bf5"/>
 				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="d550df36-1d98-4b42-ad21-d5f205d0acc5"/>
+				<reportElement style="Detail" x="390" y="0" width="163" height="15" uuid="d550df36-1d98-4b42-ad21-d5f205d0acc5"/>
 				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
 			</textField>
 		</band>
