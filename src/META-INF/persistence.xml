@@ -5,6 +5,7 @@
     <class>view.Cliente</class>
     <class>view.Relojoeiro</class>
     <class>view.Conserto</class>
+    <class>view.Usuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_relatorio_relojoeiro?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
