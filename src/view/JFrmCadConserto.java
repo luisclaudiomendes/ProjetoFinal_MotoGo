@@ -358,7 +358,7 @@ public class JFrmCadConserto extends JPanel {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -379,8 +379,10 @@ public class JFrmCadConserto extends JPanel {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new JFrmCadConserto());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setTitle("Formulário de Consertos");
                 frame.setVisible(true);
             }
         });
