@@ -5,17 +5,38 @@
  */
 package view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
 /**
  *
  * @author flavi
  */
 public class JFrmSplash extends javax.swing.JFrame {
 
+    
+    private Timer timer;
     /**
      * Creates new form JFrmSplash
      */
     public JFrmSplash() {
         initComponents();
+        
+        timer = new Timer(100, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jProgressBar1.setValue(jProgressBar1.getValue() + 1);
+                if (jProgressBar1.getValue() >= 100)
+                {
+                    timer.stop();
+                    JFrmLogin.main(null);
+                    setVisible(false);
+                }
+            }
+        });
+        
+        timer.start();
     }
 
     /**
@@ -27,21 +48,20 @@ public class JFrmSplash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(null);
+        getContentPane().add(jProgressBar1);
+        jProgressBar1.setBounds(80, 240, 300, 14);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relojoaria.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 461, 259);
 
-        setSize(new java.awt.Dimension(500, 280));
+        setSize(new java.awt.Dimension(461, 259));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -81,5 +101,7 @@ public class JFrmSplash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
