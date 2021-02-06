@@ -87,6 +87,7 @@ public class JFrmCadConserto extends JPanel {
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
         if (masterTable.getColumnModel().getColumnCount() > 0) {
+            masterTable.getColumnModel().getColumn(1).setCellRenderer(null);
             masterTable.getColumnModel().getColumn(2).setCellRenderer(dateCellRender1);
         }
 
