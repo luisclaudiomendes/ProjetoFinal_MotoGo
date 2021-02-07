@@ -6,6 +6,8 @@
 package util;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,11 +28,14 @@ public class Conexao {
         if (conexao == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conexao = DriverManager.getConnection("jdbc;mysql://localhost/db_relatorio_relojoeiro", "root", "")
+                conexao = DriverManager.getConnection("jdbc:mysql://localhost/db_relatorio_relojoeiro", "root", "");
             } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
                 Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
+        return conexao;
     }
     
 }
