@@ -90,7 +90,7 @@ FROM
 					<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="64049e12-6013-441f-b4b3-f6c57f9d13a8"/>
 					<textFieldExpression><![CDATA[$F{cliente.nome}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<textField isStretchWithOverflow="true" pattern="d/M/y">
 					<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="f0582f09-a205-4fa8-b111-bd379de76987"/>
 					<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 				</textField>

@@ -69,6 +69,8 @@ public class JFrmCadConserto extends JPanel {
 
         FormListener formListener = new FormListener();
 
+        setBackground(new java.awt.Color(0, 102, 153));
+
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idconserto}"));
         columnBinding.setColumnName("Idconserto");
@@ -90,15 +92,22 @@ public class JFrmCadConserto extends JPanel {
             masterTable.getColumnModel().getColumn(2).setCellRenderer(dateCellRender1);
         }
 
+        idconsertoLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         idconsertoLabel.setText("Idconserto:");
 
+        dataLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         dataLabel.setText("Data:");
 
+        horarioLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         horarioLabel.setText("Horario:");
 
+        clienteIdclienteLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         clienteIdclienteLabel.setText("Cliente:");
 
+        relojoeiroIdrelojoeiroLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         relojoeiroIdrelojoeiroLabel.setText("Relojoeiro:");
+
+        idconsertoField.setBackground(new java.awt.Color(204, 204, 204));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.idconserto}"), idconsertoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -106,15 +115,19 @@ public class JFrmCadConserto extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), idconsertoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        saveButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         saveButton.setText("Save");
         saveButton.addActionListener(formListener);
 
+        refreshButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(formListener);
 
+        newButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         newButton.setText("New");
         newButton.addActionListener(formListener);
 
+        deleteButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         deleteButton.setText("Delete");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -138,9 +151,11 @@ public class JFrmCadConserto extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jComboBox2, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        jButton1.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         jButton1.setText("Relatório");
         jButton1.addActionListener(formListener);
 
+        jFormattedTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.data}"), jFormattedTextField1, org.jdesktop.beansbinding.BeanProperty.create("value"));
@@ -148,6 +163,7 @@ public class JFrmCadConserto extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jFormattedTextField1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        jFormattedTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.horario}"), jFormattedTextField2, org.jdesktop.beansbinding.BeanProperty.create("value"));
@@ -164,7 +180,7 @@ public class JFrmCadConserto extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+                    .addComponent(masterScrollPane)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(idconsertoLabel)
@@ -187,7 +203,7 @@ public class JFrmCadConserto extends JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(idconsertoField, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                            .addComponent(idconsertoField)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jFormattedTextField1)

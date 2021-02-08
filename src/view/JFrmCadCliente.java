@@ -64,6 +64,8 @@ public class JFrmCadCliente extends JPanel {
 
         FormListener formListener = new FormListener();
 
+        setBackground(new java.awt.Color(0, 102, 153));
+
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idcliente}"));
         columnBinding.setColumnName("Idcliente");
@@ -81,13 +83,19 @@ public class JFrmCadCliente extends JPanel {
 
         masterScrollPane.setViewportView(masterTable);
 
+        idclienteLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         idclienteLabel.setText("Idcliente:");
 
+        nomeLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         nomeLabel.setText("Nome:");
 
+        cpfLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         cpfLabel.setText("Cpf:");
 
+        enderecoLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         enderecoLabel.setText("Endereco:");
+
+        idclienteField.setBackground(new java.awt.Color(204, 204, 204));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.idcliente}"), idclienteField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -95,11 +103,15 @@ public class JFrmCadCliente extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), idclienteField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        nomeField.setBackground(new java.awt.Color(204, 204, 204));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nome}"), nomeField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), nomeField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
+
+        cpfField.setBackground(new java.awt.Color(204, 204, 204));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.cpf}"), cpfField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -107,21 +119,27 @@ public class JFrmCadCliente extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), cpfField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        enderecoField.setBackground(new java.awt.Color(204, 204, 204));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.endereco}"), enderecoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), enderecoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        saveButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         saveButton.setText("Save");
         saveButton.addActionListener(formListener);
 
+        refreshButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         refreshButton.setText("Refresh");
         refreshButton.addActionListener(formListener);
 
+        newButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         newButton.setText("New");
         newButton.addActionListener(formListener);
 
+        deleteButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         deleteButton.setText("Delete");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -129,6 +147,7 @@ public class JFrmCadCliente extends JPanel {
 
         deleteButton.addActionListener(formListener);
 
+        jButton1.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         jButton1.setText("Relatório");
         jButton1.addActionListener(formListener);
 
@@ -161,7 +180,7 @@ public class JFrmCadCliente extends JPanel {
                             .addComponent(nomeField)
                             .addComponent(cpfField)
                             .addComponent(enderecoField)))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(masterScrollPane))
                 .addContainerGap())
         );
 
@@ -171,7 +190,7 @@ public class JFrmCadCliente extends JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idclienteLabel)

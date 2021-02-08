@@ -17,11 +17,11 @@ import java.util.logging.Logger;
  */
 public class Conexao {
     
-    private Connection conexao;
+    private static Connection conexao;
     
     private Conexao (){}
     
-    public Connection getConexao(){
+    public static Connection getConexao(){
         
         
         

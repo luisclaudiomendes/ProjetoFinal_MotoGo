@@ -56,7 +56,7 @@ public class JFrmCadUsuario extends JPanel {
 
         FormListener formListener = new FormListener();
 
-        setBackground(new java.awt.Color(153, 153, 255));
+        setBackground(new java.awt.Color(0, 102, 153));
 
         masterTable.setBackground(new java.awt.Color(255, 255, 204));
         masterTable.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N

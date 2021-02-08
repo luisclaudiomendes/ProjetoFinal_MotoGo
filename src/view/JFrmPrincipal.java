@@ -49,6 +49,7 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         jMenuItem8.setText("jMenuItem8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 102, 153));
         setExtendedState(6);
 
         jToolBar1.setRollover(true);
