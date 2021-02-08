@@ -48,27 +48,13 @@ where cliente.nome like $P{param_nome}]]>
 				<staticText>
 					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="01340d78-69b4-4216-980a-1f5b1b6c9831"/>
 					<textElement>
-						<font isBold="false"/>
+						<font size="36" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry Title]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="f65c1e63-d06a-4797-bfc4-12391a20e9c7"/>
-					<textElement>
-						<font size="22" isBold="false"/>
-					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Relatório de Consertos]]></text>
 				</staticText>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="3af92583-5cc8-42dd-9a88-9b4da12235b5"/>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="bc7b4617-97ca-4289-bffd-45cd702fc784"/>
-					<textElement textAlignment="Right">
-						<font size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
 			</frame>
 		</band>
 	</title>
@@ -82,35 +68,35 @@ where cliente.nome like $P{param_nome}]]>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[cliente_nome]]></text>
+				<text><![CDATA[Cliente]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="111" y="7" width="111" height="18" forecolor="#000000" uuid="7f135b25-ec17-4ca1-8abb-ecf4c96e03a7"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[conserto_idconserto]]></text>
+				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000" uuid="a00e23a5-53e5-4fca-8891-e88d6ded2132"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[conserto_data]]></text>
+				<text><![CDATA[Data]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000" uuid="ca5b09b4-4fe8-45f2-992e-33bfb94d9b65"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[conserto_horario]]></text>
+				<text><![CDATA[Horário]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000" uuid="62051cd2-1634-4874-a05d-08ad0afc44d2"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[relojoeiro_nome]]></text>
+				<text><![CDATA[Relojoeiro]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

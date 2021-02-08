@@ -257,7 +257,7 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         parametros.put("param_nome", "%" + txt_nome.getText() + "%");
         
         try{
-            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio3.jasper", parametros, Conexao.getConexao());
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio4.jasper", parametros, Conexao.getConexao());
             JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
         }catch(JRException ex) {
