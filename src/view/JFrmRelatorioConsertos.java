@@ -119,20 +119,20 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(txt_dataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_dataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_dataInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_dataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
+                .addGap(205, 205, 205)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -151,13 +151,14 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
                     .addComponent(txt_dataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Relatório de Consulta por Data", jPanel1);
+        jTabbedPane1.addTab("Relatório de Conserto por Data", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 153));
 
+        jLabel3.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         jLabel3.setText("Nome Cliente");
 
         txt_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +167,7 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Candara", 3, 12)); // NOI18N
         jButton2.setText("Gerar Relatório");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,10 +186,11 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(txt_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                        .addGap(145, 145, 145))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addGap(20, 20, 20))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,13 +198,13 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addComponent(txt_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("Relatório de Conserto por Cliente", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,10 +254,10 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Map<String, Object> parametros = new HashMap<>();
-        parametros.put("param_nome", "%Karol%");
+        parametros.put("param_nome", "%" + txt_nome.getText() + "%");
         
         try{
-            JasperPrint relatorio = JasperFillManager.fillReport("./relatorio/relatorio3.jasper", parametros, Conexao.getConexao());
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio3.jasper", parametros, Conexao.getConexao());
             JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
         }catch(JRException ex) {
