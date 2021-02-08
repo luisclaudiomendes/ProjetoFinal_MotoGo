@@ -9,8 +9,11 @@ import com.jaspersoft.ireport.jasper.JasperDataLoader;
 import java.util.HashMap;
 import java.util.Map;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
+import util.Conexao;
 
 /**
  *
@@ -230,13 +233,13 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         consertoList.clear();
         consertoList.addAll(consertoQuery.getResultList());
         
-        JRBeanollectionDataSource dados = new JRBeanollectionDataSource(consultar,false); 
+        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(consertoList,false); 
         try{
-            JasperPrint relatorio = JasperFillReport(".relatorio/relatorio_consulta.jasper", null, dados);
-            JasperViewer visualizador = new JasperViewer(relatorio3, false);
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorio/relatorio3.jasper", null, dados);
+            JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
         }catch(JRException ex) {
-            System.out.println("Erro" + ex.getMessager);
+            System.out.println("Erro" + ex.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -248,14 +251,14 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Map<String, Object> parametros = new HashMap<>();
-        parametros.put("param_nome, %Karol%");
+        parametros.put("param_nome", "%Karol%");
         
         try{
-            JasperPrint relatorio = JasperFillReport(".relatorio/relatorio_consulta.jasper", parametros, Conexao.getConexao());
-            JasperPrint visualizador = new JasperViewer(relatorio, false);
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorio/relatorio3.jasper", parametros, Conexao.getConexao());
+            JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
         }catch(JRException ex) {
-            System.out.println("Erro" + ex.getMessager);
+            System.out.println("Erro" + ex.getMessage());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
