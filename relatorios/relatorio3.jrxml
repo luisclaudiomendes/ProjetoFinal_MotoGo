@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5e45cee-eb2c-4f87-b656-60b34fe36e01">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cba4f002-4f50-4cc5-adf6-409e00044abb">
 	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
@@ -24,10 +21,10 @@ FROM
      INNER JOIN `relojoeiro` relojoeiro ON conserto.`relojoeiro_idrelojoeiro` = relojoeiro.`idrelojoeiro`]]>
 	</queryString>
 	<field name="cliente.nome" class="java.lang.String"/>
-	<field name="data" class="java.lang.String">
+	<field name="data" class="java.sql.Date">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="horario" class="java.lang.String">
+	<field name="horario" class="java.sql.Time">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="relojoeiro.nome" class="java.lang.String"/>
@@ -36,19 +33,15 @@ FROM
 	</background>
 	<title>
 		<band height="136" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="0" width="138" height="84" uuid="c886022c-b910-458d-a2ad-87312792cb39"/>
-				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
-			</image>
 			<staticText>
-				<reportElement style="Title" x="138" y="0" width="328" height="62" uuid="4bcf8ff4-fed2-43b4-a9db-76ebf64d0e1b"/>
+				<reportElement style="Title" x="13" y="32" width="420" height="62" uuid="4809be4a-4ad8-4da3-a261-cb3d49a56f3c"/>
 				<textElement verticalAlignment="Middle">
-					<font size="32" pdfFontName="Times-Roman"/>
+					<font pdfFontName="Times-Roman"/>
 				</textElement>
-				<text><![CDATA[Consertos Agendados]]></text>
+				<text><![CDATA[Agendamento]]></text>
 			</staticText>
 			<image>
-				<reportElement x="456" y="-115" width="244" height="177" uuid="b63566b4-d430-4e8d-b7ef-a89e61497fb7"/>
+				<reportElement x="433" y="-115" width="267" height="209" uuid="5e0373a2-8169-48b4-b1c4-cf395d58292a"/>
 				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
 			</image>
 		</band>
@@ -59,25 +52,25 @@ FROM
 	<columnHeader>
 		<band height="16" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="b8dee8c7-9c46-4cbc-bb2e-2031e475a9eb"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="c261af0f-afdf-4b41-9be8-6d57817d70b5"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement style="Column header" x="0" y="0" width="138" height="15" forecolor="#736343" uuid="7713bd52-ce97-4229-9442-dfbc76b2abaa"/>
+				<reportElement style="Column header" x="0" y="0" width="138" height="15" forecolor="#736343" uuid="6cab3b25-e0a3-4cde-98aa-577e49e60033"/>
 				<text><![CDATA[Cliente]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="138" y="0" width="138" height="15" forecolor="#736343" uuid="c9aef833-9087-4853-8272-8a8d45716232"/>
+				<reportElement style="Column header" x="138" y="0" width="138" height="15" forecolor="#736343" uuid="b316d574-d0c1-4ffb-8fa3-e4a2be3aa047"/>
 				<text><![CDATA[Data]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="276" y="0" width="138" height="15" forecolor="#736343" uuid="e3a257b0-31d2-4cff-8d21-c25d23aa0627"/>
+				<reportElement style="Column header" x="276" y="0" width="138" height="15" forecolor="#736343" uuid="abe1cd64-52ab-4f1c-bd66-fb9631fea203"/>
 				<text><![CDATA[Horário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="414" y="0" width="138" height="15" forecolor="#736343" uuid="34152331-5ef5-41a3-be11-1443a1f7f682"/>
+				<reportElement style="Column header" x="414" y="0" width="138" height="15" forecolor="#736343" uuid="f5df519d-034b-4f9d-a396-923a8ec8b00b"/>
 				<text><![CDATA[Relojoeiro]]></text>
 			</staticText>
 		</band>
@@ -85,21 +78,21 @@ FROM
 	<detail>
 		<band height="15" splitType="Stretch">
 			<frame>
-				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="8aa1ac59-0c6d-4764-9043-155a1088f1ee"/>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="b532d2fd-4725-47ea-b419-94089ac4f4b0"/>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="64049e12-6013-441f-b4b3-f6c57f9d13a8"/>
+					<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="8e0c1f45-b197-4053-bd3b-c5707de86de3"/>
 					<textFieldExpression><![CDATA[$F{cliente.nome}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="d/M/y">
-					<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="f0582f09-a205-4fa8-b111-bd379de76987"/>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="66fb407f-9162-4a57-96c7-6de1d77c170e"/>
 					<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="HH:mm">
-					<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="7d9b8f24-e301-4bb8-acaf-5800a202cae9"/>
+					<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="9547a7dc-ab50-48a9-b0f8-65d6de61ae78"/>
 					<textFieldExpression><![CDATA[$F{horario}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="1908d51f-cbee-4edb-a018-22fe506dabf4"/>
+					<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="8db6e572-fa94-4f21-9748-87c544f5a85f"/>
 					<textFieldExpression><![CDATA[$F{relojoeiro.nome}]]></textFieldExpression>
 				</textField>
 			</frame>
@@ -108,7 +101,7 @@ FROM
 	<columnFooter>
 		<band height="45" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="9a1bf9fc-16d0-4b80-9c0b-b60cc7d250e6"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="870043aa-b9df-4db0-af6b-c2ae590d5b24"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -118,23 +111,23 @@ FROM
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="dc5a5fde-3384-43a4-bcdb-bc8d9d951485"/>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="181378a8-0324-4810-8f57-214073084761"/>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="04c2f080-1f46-4ddb-a10b-2f773e12de82"/>
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="37d8bf93-78d8-4776-b5a5-e5714e01ef27"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="b95d527b-b144-46ac-bc52-f64f1d440095"/>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="0d527b45-028d-4c15-8954-d499b9fd105a"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="0a326969-1ef1-40ca-ace5-bb3462f7e5a2"/>
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="23ba7481-4d9a-467e-a27e-26bbecc1fcf5"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>

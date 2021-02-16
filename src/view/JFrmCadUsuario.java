@@ -48,22 +48,20 @@ public class JFrmCadUsuario extends JPanel {
         senhaLabel = new javax.swing.JLabel();
         idusuarioField = new javax.swing.JTextField();
         loginField = new javax.swing.JTextField();
-        senhaField = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         FormListener formListener = new FormListener();
 
         setBackground(new java.awt.Color(0, 102, 153));
 
-        masterTable.setBackground(new java.awt.Color(255, 255, 204));
-        masterTable.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
-        masterTable.setForeground(new java.awt.Color(255, 255, 255));
+        masterTable.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         masterTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        masterTable.setGridColor(new java.awt.Color(255, 255, 255));
-        masterTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        masterTable.setGridColor(new java.awt.Color(204, 204, 204));
+        masterTable.setSelectionBackground(new java.awt.Color(0, 153, 255));
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idusuario}"));
@@ -75,9 +73,15 @@ public class JFrmCadUsuario extends JPanel {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${senha}"));
         columnBinding.setColumnName("Senha");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);
-
+        jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
+        if (masterTable.getColumnModel().getColumnCount() > 0) {
+            masterTable.getColumnModel().getColumn(2).setMinWidth(0);
+            masterTable.getColumnModel().getColumn(2).setPreferredWidth(0);
+            masterTable.getColumnModel().getColumn(2).setMaxWidth(0);
+        }
 
         idusuarioLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         idusuarioLabel.setText("Idusuario:");
@@ -106,15 +110,6 @@ public class JFrmCadUsuario extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), loginField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        senhaField.setBackground(new java.awt.Color(204, 204, 204));
-        senhaField.setFont(new java.awt.Font("Candara", 0, 12)); // NOI18N
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.senha}"), senhaField, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), senhaField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         saveButton.setFont(new java.awt.Font("Cambria", 3, 12)); // NOI18N
         saveButton.setText("Save");
         saveButton.addActionListener(formListener);
@@ -134,6 +129,13 @@ public class JFrmCadUsuario extends JPanel {
         bindingGroup.addBinding(binding);
 
         deleteButton.addActionListener(formListener);
+
+        jPasswordField1.setBackground(new java.awt.Color(204, 204, 204));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.senha}"), jPasswordField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jPasswordField1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -161,7 +163,7 @@ public class JFrmCadUsuario extends JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(idusuarioField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
                                     .addComponent(loginField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(senhaField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)))
+                                    .addComponent(jPasswordField1)))
                             .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -172,7 +174,7 @@ public class JFrmCadUsuario extends JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idusuarioLabel)
@@ -184,7 +186,7 @@ public class JFrmCadUsuario extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(senhaLabel)
-                    .addComponent(senhaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
@@ -274,6 +276,7 @@ public class JFrmCadUsuario extends JPanel {
     private javax.swing.JTextField idusuarioField;
     private javax.swing.JLabel idusuarioLabel;
     private javax.swing.JColorChooser jColorChooser1;
+    private javax.swing.JPasswordField jPasswordField1;
     private java.util.List<view.Usuario> list;
     private javax.swing.JTextField loginField;
     private javax.swing.JLabel loginLabel;
@@ -283,7 +286,6 @@ public class JFrmCadUsuario extends JPanel {
     private javax.persistence.Query query;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton saveButton;
-    private javax.swing.JTextField senhaField;
     private javax.swing.JLabel senhaLabel;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables

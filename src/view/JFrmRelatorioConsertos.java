@@ -8,6 +8,8 @@ package view;
 import com.jaspersoft.ireport.jasper.JasperDataLoader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -52,6 +54,7 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        timeCellRender1 = new render.TimeCellRender();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txt_nome = new javax.swing.JTextField();
@@ -70,7 +73,7 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 153));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 153));
@@ -96,10 +99,10 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${horario}"));
         columnBinding.setColumnName("Horario");
-        columnBinding.setColumnClass(String.class);
+        columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${data}"));
         columnBinding.setColumnName("Data");
-        columnBinding.setColumnClass(String.class);
+        columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliente}"));
         columnBinding.setColumnName("Cliente");
         columnBinding.setColumnClass(view.Cliente.class);
@@ -109,18 +112,19 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(1).setCellRenderer(timeCellRender1);
+        }
 
         jLabel1.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
         jLabel1.setText("Data Inicial");
+
+        timeCellRender1.setText("timeCellRender1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,13 +139,23 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
                 .addGap(205, 205, 205)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(timeCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(265, 265, 265))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(18, 18, 18)
+                .addComponent(timeCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -225,7 +239,8 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
 
         bindingGroup.bind();
 
-        pack();
+        setSize(new java.awt.Dimension(558, 389));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -235,13 +250,13 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
         consertoQuery.setParameter("dtFinal", txt_dataFinal.getValue());
         consertoList.clear();
         consertoList.addAll(consertoQuery.getResultList());
-        
-        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(consertoList,false); 
-        try{
-            JasperPrint relatorio = JasperFillManager.fillReport("./relatorio/relatorio3.jasper", null, dados);
+
+        JRBeanCollectionDataSource dados = new JRBeanCollectionDataSource(consertoList, false);
+        try {
+            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio3.jasper", null, dados);
             JasperViewer visualizador = new JasperViewer(relatorio, false);
             visualizador.setVisible(true);
-        }catch(JRException ex) {
+        } catch (JRException ex) {
             System.out.println("Erro" + ex.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -252,17 +267,16 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+
         Map<String, Object> parametros = new HashMap<>();
         parametros.put("param_nome", "%" + txt_nome.getText() + "%");
-        
-        try{
-            JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio4.jasper", parametros, Conexao.getConexao());
-            JasperViewer visualizador = new JasperViewer(relatorio, false);
-            visualizador.setVisible(true);
-        }catch(JRException ex) {
-            System.out.println("Erro" + ex.getMessage());
-        }
+        try {
+             JasperPrint relatorio = JasperFillManager.fillReport("./relatorios/relatorio4.jasper", parametros, Conexao.getConexao());
+             JasperViewer visualizador = new JasperViewer(relatorio, false);
+             visualizador.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(JFrmRelatorioConsertos.class.getName()).log(Level.SEVERE, null, ex);
+        }       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -316,6 +330,7 @@ public class JFrmRelatorioConsertos extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private render.TimeCellRender timeCellRender1;
     private javax.swing.JFormattedTextField txt_dataFinal;
     private javax.swing.JFormattedTextField txt_dataInicial;
     private javax.swing.JTextField txt_nome;

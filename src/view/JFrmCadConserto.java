@@ -66,6 +66,7 @@ public class JFrmCadConserto extends JPanel {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
         dateCellRender1 = new render.DateCellRender();
+        timeCellRender1 = new render.TimeCellRender();
 
         FormListener formListener = new FormListener();
 
@@ -77,8 +78,10 @@ public class JFrmCadConserto extends JPanel {
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${data}"));
         columnBinding.setColumnName("Data");
+        columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${horario}"));
         columnBinding.setColumnName("Horario");
+        columnBinding.setColumnClass(java.util.Date.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cliente}"));
         columnBinding.setColumnName("Cliente");
         columnBinding.setColumnClass(view.Cliente.class);
@@ -89,7 +92,8 @@ public class JFrmCadConserto extends JPanel {
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
         if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(2).setCellRenderer(dateCellRender1);
+            masterTable.getColumnModel().getColumn(1).setCellRenderer(dateCellRender1);
+            masterTable.getColumnModel().getColumn(2).setCellRenderer(timeCellRender1);
         }
 
         idconsertoLabel.setFont(new java.awt.Font("Candara", 1, 14)); // NOI18N
@@ -173,6 +177,8 @@ public class JFrmCadConserto extends JPanel {
 
         dateCellRender1.setText("dateCellRender1");
 
+        timeCellRender1.setText("timeCellRender1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -200,8 +206,10 @@ public class JFrmCadConserto extends JPanel {
                                 .addComponent(refreshButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(saveButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(timeCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(idconsertoField)
                             .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -245,7 +253,8 @@ public class JFrmCadConserto extends JPanel {
                     .addComponent(deleteButton)
                     .addComponent(newButton)
                     .addComponent(jButton1)
-                    .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timeCellRender1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -372,6 +381,7 @@ public class JFrmCadConserto extends JPanel {
     private java.util.List<view.Relojoeiro> relojoeiroList;
     private javax.persistence.Query relojoeiroQuery;
     private javax.swing.JButton saveButton;
+    private render.TimeCellRender timeCellRender1;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
     public static void main(String[] args) {
