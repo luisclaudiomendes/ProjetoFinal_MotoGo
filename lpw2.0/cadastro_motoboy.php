@@ -72,7 +72,8 @@
     </div>
   </div><!-- Fim Título -->
 
-  <form class="container form-group" method="POST" action="php/motoboy/cadastro_motoboy.php"><!-- Início Formulário Motoboy -->
+  <form class="container form-group" method="POST" action="php/motoboy/cadastro_motoboy.php">
+    <!-- Início Formulário Motoboy -->
     <div class="row ">
       <div class="col-lg-6 mt-2">
         <label>Nome Completo</label>

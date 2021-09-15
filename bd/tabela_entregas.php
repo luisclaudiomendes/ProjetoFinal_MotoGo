@@ -1,15 +1,15 @@
 <?php
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-    $banco = "motogo";
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "motogo";
 
-	$conexao = new mysqli ($servidor, $usuario, $senha, $banco); 
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-	    if ($conexao->connect_error)
-		die ("Conexão falhou: " . $conexao->connect_error);
-	
-	$sql = "CREATE TABLE entregas (
+if ($conexao->connect_error)
+	die("Conexão falhou: " . $conexao->connect_error);
+
+$sql = "CREATE TABLE entregas (
 			id_motoboy int UNSIGNED, FOREIGN KEY (id_motoboy) REFERENCES motoboy(id_motoboy),
 			id_empresa int UNSIGNED, FOREIGN KEY (id_empresa) REFERENCES empresa(id_empresa),
 			motoboy VARCHAR(60),
@@ -23,11 +23,10 @@
 			horaRetirada VARCHAR(4),
 			horaEntrega VARCHAR(4)
 			)";
-			
-		if ($conexao->query($sql) === TRUE)
-			echo "Tabela entregas criada com sucesso";
-		else
-			echo "Erro criando a tabela entregas: " . $conexao->error; 
-   
-	$conexao->close();
-?>
+
+if ($conexao->query($sql) === TRUE)
+	echo "Tabela entregas criada com sucesso";
+else
+	echo "Erro criando a tabela entregas: " . $conexao->error;
+
+$conexao->close();

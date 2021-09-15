@@ -1,15 +1,15 @@
 <?php
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-    $banco = "motogo";
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "motogo";
 
-	$conexao = new mysqli ($servidor, $usuario, $senha, $banco); 
+$conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-	    if ($conexao->connect_error)
-		die ("Conexão falhou: " . $conexao->connect_error);
-	
-	$sql = "CREATE TABLE motoboy (
+if ($conexao->connect_error)
+	die("Conexão falhou: " . $conexao->connect_error);
+
+$sql = "CREATE TABLE motoboy (
             id_motoboy INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			nome_completo VARCHAR(60),
             cpf INT,
@@ -20,11 +20,10 @@
             placa_da_moto VARCHAR(7),
 			cor_da_moto VARCHAR(15)
 			)";
-			
-		if ($conexao->query($sql) === TRUE)
-			echo "Tabela motoboy criada com sucesso";
-		else
-			echo "Erro criando a tabela motoboy: " . $conexao->error;
 
-	$conexao->close();
-?>
+if ($conexao->query($sql) === TRUE)
+	echo "Tabela motoboy criada com sucesso";
+else
+	echo "Erro criando a tabela motoboy: " . $conexao->error;
+
+$conexao->close();
