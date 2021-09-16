@@ -11,9 +11,9 @@ if (!isset($_POST["entregaEscolhida"])) {
 if (strlen($erros) == 0) {
   echo "A entrega foi removida com sucesso! <br>";
   echo $_POST["entregaEscolhida"];
-  header("refresh: 5; url = ../../index.html");
+  //header("refresh: 5; url = ../../index.html");
 } else {
   echo $erros . "<br>";
   echo "Você será redirecionado para a página de remoção. <br>";
-  header("refresh: 5; url = ../../remover_entrega.html");
+  //header("refresh: 5; url = ../../remover_entrega.html");
 }

@@ -12,6 +12,5 @@ if (strlen($erros) == 0) {
 } else {
     echo $erros . "<br>";
     echo "Você será redirecionado para a página de consulta. <br>";
-    header("refresh: 5; url = ../../consultar_entrega.html");
+    //header("refresh: 5; url = ../../consultar_entrega.html");
 }
-?>
