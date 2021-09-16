@@ -75,7 +75,7 @@
   <form class="container form-group" method="POST" action="php/entrega/cadastrar_entrega.php">
     <!-- Início Formulário Entregas -->
     <div class="mt-2">
-      <label for="empresaEscolhida" class="form-label"> Escolha qual empresa deseja atualizar: </label>
+      <label for="empresaEscolhida" class="form-label"> Escolha qual empresa deseja selecionar: </label>
       <select class="custom-select" id="empresaEscolhida" name="empresaEscolhida">
         <option value="null" selected>-- Selecione uma empresa --</option>
 
@@ -90,7 +90,7 @@
     </div>
 
     <div class="mt-2">
-      <label for="motoboyEscolhido" class="form-label"> Escolha qual motoboy deseja atualizar: </label>
+      <label for="motoboyEscolhido" class="form-label"> Escolha qual motoboy deseja selecionar: </label>
       <select class="custom-select" id="motoboyEscolhido" name="motoboyEscolhido">
         <option value="null" selected>-- Selecione um motoboy --</option>
         <?php
@@ -137,7 +137,7 @@
 
     <div class="mt-2">
       <label>Descrição do produto</label>
-      <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao" placeholder="Exemplo: o que é, quantidades, peso estimado, fragilidade, etc"></textarea>
+      <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao" placeholder="Exemplo: o que é, quantidades, peso estimado, fragilidade, etc..."></textarea>
     </div>
 
     <button class="btn btn-info mt-5 mb-5" type="submit">Cadastrar</button>
