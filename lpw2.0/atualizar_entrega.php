@@ -72,8 +72,7 @@
     </div>
   </div><!-- Fim Título -->
 
-  <form class="container form-group" method="POST" action="#">
-    <!-- Início Atualizar Motoboy -->
+  <form class="container form-group" method="POST" action="#"><!-- Início Atualizar Motoboy -->
 
     <div class="mt-2">
       <label for="entregaEscolhida" class="form-label"> Escolha qual entrega deseja atualizar: </label>

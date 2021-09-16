@@ -72,23 +72,22 @@
     </div>
   </div><!-- Fim Título -->
 
-  <form class="container form-group" method="POST" action="#">
-    <!-- Início Formulário Entregas -->
+  <form class="container form-group" method="POST" action="#"><!-- Início Formulário Entregas -->
 
-    <label for="entregaEscolhida" class="form-label"> Escolha qual entrega deseja consultar: </label>
-    <select class="custom-select" name="entregaEscolhida" id="entregaEscolhida">
+  <label for="entregaEscolhida" class="form-label"> Escolha qual entrega deseja consultar: </label>
+  <select class="custom-select" name="entregaEscolhida" id="entregaEscolhida">
 
       <option value="null" selected>-- Selecione uma entrega --</option>
 
-      <?php
-      require_once "../model/entregas.php";
-      $entregas = selecionarTodasEntregas();
-      foreach ($entregas as $ad) {
-        echo "<option value = $a->id_entrega>" . $ad->anome . "</option>";
-        echo "<hr>";
-      }
-      ?>
-      <select><br>
+    <?php
+    require_once "../model/entregas.php";
+    $entregas = selecionarTodasEntregas();
+    foreach ($entregas as $ad) {
+      echo "<option value = $a->id_entrega>" . $ad->anome . "</option>";
+      echo "<hr>";
+    }
+    ?>
+    <select><br>
         <button class="btn btn-info mt-5" type="submit">Consultar</button>
 
   </form><!-- Fim Formulário Entregas -->
