@@ -9,7 +9,7 @@ $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 if ($conexao->connect_error)
 	die("Conexão falhou: " . $conexao->connect_error);
 
-$sql = "CREATE TABLE empresa (
+$sql = "CREATE TABLE empresa ( 
 			id_empresa INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			nome VARCHAR(30),
 			endereco VARCHAR(100),

@@ -19,7 +19,7 @@ $sql = "CREATE TABLE entregas (
 			enderecoRetirada VARCHAR(100),
 			enderecoEntrega VARCHAR(100),
 			id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-			dataEntrega INT,
+			dataEntrega VARCHAR(20),
 			horaRetirada VARCHAR(4),
 			horaEntrega VARCHAR(4)
 			)";
