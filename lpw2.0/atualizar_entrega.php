@@ -109,7 +109,7 @@
           require_once "../model/empresa.php";
           $empresas = selecionarTodasEmpresas();
           foreach ($empresas as $a) {
-            echo "<option selected value = $a->id_empresa>" . $a->nome . "</option>";
+            echo "<option value = $a->id_empresa>" . $a->nome . "</option>";
           }
           ?>
         </select><br>
@@ -122,7 +122,7 @@
           require_once "../model/motoboy.php";
           $motoboys = selecionarTodosMotoboys();
           foreach ($motoboys as $a) {
-            echo "<option selected value = $a->id_motoboy>" . $a->nome_completo . "</option>";
+            echo "<option value = $a->id_motoboy>" . $a->nome_completo . "</option>";
           }
 
           ?>
@@ -162,7 +162,7 @@
 
       <div class="mt-2">
         <label>Descrição do produto</label>
-        <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao" ><?php echo $entrega->produtoDescricao; ?></textarea>
+        <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao"><?php echo $entrega->produtoDescricao; ?></textarea>
       </div>
 
       <button class="btn btn-info mt-5 mb-5" type="submit">Cadastrar</button>
