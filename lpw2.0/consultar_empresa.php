@@ -94,7 +94,7 @@
   </form><!-- Fim Formulário Empresas -->
 
   <?php
-  if ($_POST["empresaEscolhida"] !== "null") {
+  if (!empty($_POST["empresaEscolhida"])) {
     require_once "../model/empresa.php";
     $empresa = selecionarEmpresaId($_POST["empresaEscolhida"]);
 

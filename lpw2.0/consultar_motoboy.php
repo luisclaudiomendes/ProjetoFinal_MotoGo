@@ -94,7 +94,7 @@
 
 
   <?php
-  if ($_POST["motoboyEscolhido"] !== "null") {
+  if (!empty($_POST["empresaEscolhida"])) {
     require_once "../model/motoboy.php";
     $motoboy = selecionarMotoboyId($_POST["motoboyEscolhido"]);
 

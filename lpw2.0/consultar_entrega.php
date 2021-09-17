@@ -94,7 +94,7 @@
   </form><!-- Fim Formulário Entregas -->
 
   <?php
-  if ($_POST["entregaEscolhida"] !== "null") {
+  if (!empty($_POST["entregaEscolhida"])) {
     require_once "../model/entregas.php";
     $entrega = selecionarEntregaId($_POST["entregaEscolhida"]);
 
