@@ -139,7 +139,7 @@
         <input class="form-control" type="text" name="endereco" id="endereco" value="<?php echo $motoboy->endereco; ?>">
       </div>
 
-      <div class="col-lg-6 mt-2">
+      <div class="mt-2">
         <label for="placa">Placa da Moto</label>
         <input class="form-control" type="text" name="placa" id="placa" value="<?php echo $motoboy->placa_da_moto; ?>">
       </div>

@@ -111,18 +111,18 @@
           <input class="form-control" type="text" name="nome" id="nome" value="<?php echo $empresa->nome; ?>">
         </div>
 
-        <div class="mt-2">
+        <div class="col-lg-6 mt-2">
           <label for="endereco">Endereço</label>
           <input class="form-control" type="text" name="endereco" id="endereco" value="<?php echo $empresa->endereco; ?>">
         </div>
       </div>
 
-      <div class="col-lg-6 mt-2">
+      <div class=" mt-2">
         <label for="telefone">Telefone</label>
         <input class="form-control" type="text" name="telefone" id="telefone" value="<?php echo $empresa->telefone; ?>">
       </div>
 
-      <div class="col-lg-6 mt-2">
+      <div class=" mt-2">
         <label for="cnpj">CNPJ</label>
         <input class="form-control" type="text" name="cnpj" id="cnpj" value="<?php echo $empresa->cnpj; ?>">
       </div>
