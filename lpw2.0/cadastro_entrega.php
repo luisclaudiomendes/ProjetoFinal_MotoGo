@@ -106,17 +106,17 @@
 
     <div class="mt-2">
       <label>Nome do produto</label>
-      <input class="form-control" type="text" name="produto" id="produto">
+      <input class="form-control" type="text" name="produtoNome" id="produtoNome">
     </div>
 
     <div class="mt-2">
       <label>Endereço de retirada do produto</label>
-      <input class="form-control" type="text" name="endereço" id="endereço">
+      <input class="form-control" type="text" name="enderecoRetirada" id="enderecoRetirada">
     </div>
 
     <div class="mt-2">
       <label>Endereço de entrega do produto</label>
-      <input class="form-control" type="text" name="entrega" id="entrega">
+      <input class="form-control" type="text" name="enderecoEntrega" id="enderecoEntrega">
     </div>
 
     <div class="mt-2">
@@ -127,11 +127,11 @@
     <div class="row mt-2">
       <div class="mt-2 col-md-6">
         <label>Horário de retirada do produto</label>
-        <input class="form-control" type="time" name="horario" id="horario">
+        <input class="form-control" type="time" name="horaRetirada" id="horaRetirada">
       </div>
       <div class="mt-2 col-md-6">
         <label>Horário de entrega do produto</label>
-        <input class="form-control" type="time" name="hrentrega" id="hrentrega">
+        <input class="form-control" type="time" name="horaEntrega" id="horaEntrega">
       </div>
     </div>
 

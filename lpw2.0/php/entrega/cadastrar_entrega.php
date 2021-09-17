@@ -32,9 +32,9 @@ if (isset($_POST["idOculto"])) {
     echo "Atualização efetuada com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
     header("refresh:5;url=../../index.html");
-} else {
+} else if (isset($_POST["empresaEscolhida"]) and isset($_POST["motoboyEscolhido"])) {
     require_once "../../../model/entregas.php";
-    inserirEntrega($_POST["empresa"], $_POST["nome"], $_POST["produto"], $_POST["endereço"], $_POST["entrega"], $_POST["data"], $_POST["horario"], $_POST["hrentrega"], $_POST["descricao"]);
+    inserirEntrega($_POST["empresaEscolhida"], $_POST["motoboyEscolhido"], $_POST["empresaEscolhida"], $_POST["motoboyEscolhido"], $_POST["produtoNome"], $_POST["enderecoRetirada"], $_POST["enderecoEntrega"], $_POST["data"], $_POST["horaRetirada"], $_POST["horaEntrega"], $_POST["descricao"]);
     echo "Cadastro efetuado com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
     //header ("refresh:5;url=../../index.html");

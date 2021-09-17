@@ -3,11 +3,11 @@
 include "../bd/conexaoBD.php";
 
 
-function inserirEntrega($empresa, $nome, $produto, $endereço, $entrega, $data, $horario, $hrentrega, $descricao)
+function inserirEntrega($id_empresa, $id_motoboy, $empresa, $motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $data, $horaRetirada, $horaEntrega, $descricao)
 {
 	global $conexao;
-	$prepara = $conexao->prepare("INSERT INTO entregas (empresa, motoboy, produtoNome, enderecoRetirada, enderecoEntrega, dataEntrega, horaRetirada, horaEntrega, produtoDescricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$prepara->bind_param("sssssssss", $empresa, $nome, $produto, $endereço, $entrega, $data, $horario, $hrentrega, $descricao);
+	$prepara = $conexao->prepare("INSERT INTO entregas (id_empresa, id_motoboy, empresa, motoboy, produtoNome, enderecoRetirada, enderecoEntrega, dataEntrega, horaRetirada, horaEntrega, produtoDescricao) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$prepara->bind_param("iisssssssss", $id_empresa, $id_motoboy, $empresa, $motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $data, $horaRetirada, $horaEntrega, $descricao);
 	$prepara->execute();
 }
 
@@ -31,7 +31,7 @@ function excluirEntrega($id)
 function selecionarTodasEntregas()
 {
 	global $conexao;
-	$prepara = $conexao->prepare("SELECT entregas.id, motoboy.nome_completo as anome, empresa.nome as pnome FROM entregas, motoboy, empresa WHERE entregas.idMotoboy = motoboy.id_motoboy and entregas.idEmpresa = empresa.id_empresa");
+	$prepara = $conexao->prepare("SELECT entregas.id, motoboy.nome_completo as anome, empresa.nome as pnome FROM entregas, motoboy, empresa WHERE entregas.id_motoboy = motoboy.id_motoboy and entregas.id_empresa = empresa.id_empresa");
 	$prepara->execute();
 	$resultado = $prepara->get_result();
 	while ($ad = $resultado->fetch_object()) {

@@ -84,7 +84,7 @@
       require_once "../model/entregas.php";
       $entregas = selecionarTodasEntregas();
       foreach ($entregas as $ad) {
-        echo "<option value = $a->id_entrega>" . $ad->anome . "</option>";
+        echo "<option value=$ad->id>". "Entrega " . $ad->id ."</option>";
         echo "<hr>";
       }
       ?>
@@ -93,6 +93,39 @@
 
   </form><!-- Fim Formulário Entregas -->
 
+  <?php
+  if ($_POST["entregaEscolhida"] !== "null") {
+    require_once "../model/entregas.php";
+    $entrega = selecionarEntregaId($_POST["entregaEscolhida"]);
+
+    echo '<div class="container mt-5">';
+    echo '<table class="table table-bordered table-hover" >';
+    echo '<tr class="text-white" style="background: #036970">';
+    echo '<th>Empresa</th>';
+    echo '<th>Motoboy</th>';
+    echo '<th>Nome do produto</th>';
+    echo '<th>Endereço de Retirada do Produto</th>';
+    echo '<th>Endereço de Entrega do Produto</th>';
+    echo '<th>Data de Entrega</th>';
+    echo '<th>Horário de Retirada do Produto</th>';
+    echo '<th>Horário de Entrega do Produto</th>';
+    echo '<th>Descrição do Produto</th>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<td>' . $entrega->empresa . '</td>';
+    echo '<td>' . $entrega->motoboy . '</td>';
+    echo '<td>' . $entrega->produtoNome . '</td>';
+    echo '<td>' . $entrega->enderecoRetirada . '</td>';
+    echo '<td>' . $entrega->enderecoEntrega . '</td>';
+    echo '<td>' . $entrega->dataEntrega . '</td>';
+    echo '<td>' . $entrega->horaRetirada . '</td>';
+    echo '<td>' . $entrega->horaEntrega . '</td>';
+    echo '<td>' . $entrega->produtoDescricao . '</td>';
+    echo '</tr>';
+    echo '</table>';
+    echo '</div>';
+  }
+  ?>
 
   <footer class=" mt-4 pt-5 pb-5 bg-333333">
     <!-- Início Rodapé -->
