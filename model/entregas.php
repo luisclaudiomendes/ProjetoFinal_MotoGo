@@ -43,7 +43,7 @@ function selecionarTodasEntregas()
 function selecionarEntregaId($id)
 {
 	global $conexao;
-	$prepara = $conexao->prepare("SELECT * FROM entregas WHERE id = ?");
+	$prepara = $conexao->prepare("SELECT entregas.id, motoboy.nome_completo as nome_motoboy, empresa.nome as nome_empresa, entregas.produtoNome as produtoNome, entregas.enderecoRetirada as enderecoRetirada, entregas.enderecoEntrega as enderecoEntrega, entregas.dataEntrega as dataEntrega, entregas.horaRetirada as horaRetirada, entregas.horaEntrega as horaEntrega, entregas.produtoDescricao as produtoDescricao  FROM entregas, motoboy, empresa WHERE id = ?");
 	$prepara->bind_param("i", $id);
 	$prepara->execute();
 	$resultado = $prepara->get_result();

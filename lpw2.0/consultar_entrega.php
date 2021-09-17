@@ -112,8 +112,8 @@
     echo '<th>Descrição do Produto</th>';
     echo '</tr>';
     echo '<tr>';
-    echo '<td>' . $entrega->empresa . '</td>';
-    echo '<td>' . $entrega->motoboy . '</td>';
+    echo '<td>' . $entrega->nome_empresa . '</td>';
+    echo '<td>' . $entrega->nome_motoboy . '</td>';
     echo '<td>' . $entrega->produtoNome . '</td>';
     echo '<td>' . $entrega->enderecoRetirada . '</td>';
     echo '<td>' . $entrega->enderecoEntrega . '</td>';
