@@ -2,29 +2,32 @@
 
 include "../../../bd/conexaoBD.php";
 
-/*$erros = "";
+$erros = "";
 
-if (!isset($_POST["empresa"]) || !isset($_POST["nome"]) || !isset($_POST["produto"]) || !isset($_POST["endereço"]) || !isset($_POST["entrega"]) || !isset($_POST["data"]) || !isset($_POST["horario"]) || !isset($_POST["hrentrega"]) || !isset($_POST["descricao"])) {
+if (!isset($_POST["empresa"]) || !isset($_POST["motoboy"]) || !isset($_POST["produtoNome"]) || !isset($_POST["enderecoRetirada"]) || !isset($_POST["enderecoEntrega"]) || !isset($_POST["dataEntrega"]) || !isset($_POST["horaRetirada"]) || !isset($_POST["horaEntrega"]) || !isset($_POST["produtoDescricao"])) {
     $erros .= "Todos os campos devem ser preenchidos! <br>";
 }
 
-if (strlen($_POST["empresa"]) < 3) {
-    $erros .= "Coloque o nome completo da empresa! <br>";
+if ($_POST["empresa"] == "null") {
+    $erros .= "Você deve selecionar uma empresa! <br>";
 }
 
-if (strlen($_POST["nome"]) < 4) {
-    $erros .= "Coloque o nome completo do motoboy! <br>";
+if ($_POST["motoboy"] == "null") {
+    $erros .= "Você deve selecionar um motoboy! <br>";
 }
 
-if (strlen($_POST["endereço"]) < 10) {
+if (strlen($_POST["produtoNome"]) < 2) {
+    $erros .= "Coloque o nome do produto completo! <br>";
+}
+
+if (strlen($_POST["enderecoRetirada"]) < 10) {
     $erros .= "Coloque o endereço de retirada completo! <br>";
 }
 
-if (strlen($_POST["entrega"]) < 10) {
+if (strlen($_POST["enderecoEntrega"]) < 10) {
     $erros .= "Coloque o endereço de entrega completo! <br>";
-}*/
+}
 
-//redirecionamento
 
 /*if (isset($_POST["idOculto"])) {
     require_once "../../../model/entregas.php";
@@ -32,10 +35,15 @@ if (strlen($_POST["entrega"]) < 10) {
     echo "Atualização efetuada com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
     header("refresh:5;url=../../index.html");
-}*/ if (isset($_POST["empresaEscolhida"]) and isset($_POST["motoboyEscolhido"])) {
+}*/ 
+
+
+//redirecionamento
+
+if (isset($_POST["empresaEscolhida"]) and isset($_POST["motoboyEscolhido"])) {
     require_once "../../../model/entregas.php";
     inserirEntrega($_POST["empresaEscolhida"], $_POST["motoboyEscolhido"], $_POST["empresaEscolhida"], $_POST["motoboyEscolhido"], $_POST["produtoNome"], $_POST["enderecoRetirada"], $_POST["enderecoEntrega"], $_POST["data"], $_POST["horaRetirada"], $_POST["horaEntrega"], $_POST["descricao"]);
     echo "Cadastro efetuado com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
-    //header ("refresh:5;url=../../index.html");
+    header ("refresh:5;url=../../index.html");
 }
