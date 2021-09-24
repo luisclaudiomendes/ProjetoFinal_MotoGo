@@ -85,8 +85,9 @@
       <?php
       require_once "../model/entregas.php";
       $entregas = selecionarTodasEntregas();
-      foreach ($entregas as $e) {
-        echo "<option value = $e->id>" . $e->motoboy . "</option>";
+      foreach ($entregas as $ad) {
+        echo "<option value=$ad->id>". "Entrega " . $ad->id ."</option>";
+        echo "<hr>";
       }
       ?>
     </select><br>
@@ -94,8 +95,8 @@
   </form><!-- Fim Formulário Entrega -->
 
   <?php
-  if ($_POST["entregaEscolhida"] !== 'null') {
-    require_once "../model/entrega.php";
+  if (isset($_POST["entregaEscolhida"])) {
+    require_once "../model/entregas.php";
     excluirEntrega($_POST["entregaEscolhida"]);
     echo '<div class="container mt-5 mb-5">';
     echo '<p class="text-success">Entrega excluída do banco de dados com sucesso! <i class="fas fa-check" class="bg-success"></i> <p> ';

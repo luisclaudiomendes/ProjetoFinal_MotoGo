@@ -1,7 +1,5 @@
 <?php
-
-include "../bd/conexaoBD.php";
-
+include 'C:\xampp\htdocs\ProjetoFinal_MotoGo\bd\conexaoBD.php'; 
 
 function inserirEntrega($id_empresa, $id_motoboy, $empresa, $motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $data, $horaRetirada, $horaEntrega, $descricao)
 {
