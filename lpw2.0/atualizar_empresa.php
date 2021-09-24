@@ -129,7 +129,7 @@
 
       <div class="mt-2">
         <label for="descricao">Descrição</label>
-        <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao" value="<?php echo $empresa->descricao; ?>"></textarea>
+        <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao"><?php echo $empresa->descricao; ?></textarea>
       </div>
 
       <button class="btn btn-info mb-5 mt-5" type="submit">Atualizar</button>

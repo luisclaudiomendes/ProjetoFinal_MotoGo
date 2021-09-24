@@ -1,10 +1,6 @@
 <?php
 $erros = "";
 
-if ($_POST["selecao"] == "null") {
-    $erros .= "Você deve selecionar uma empresa! <br>";
-}
-
 if (!isset($_POST["nome"]) || !isset($_POST["endereco"]) || !isset($_POST["telefone"]) || !isset($_POST["cnpj"]) || !isset($_POST["descricao"])) {
     $erros .= "Todos os campos devem ser preenchidos! <br>";
 }
@@ -27,6 +23,8 @@ if (strlen($_POST["endereco"]) < 10) {
 
 //redirecionamento
 if (strlen($erros) == 0) {
+    require_once "../../../model/empresa.php";
+    atualizarEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"], $_POST["idOculto"]);
     echo "Atualização feita com sucesso! <br>";
     header("refresh: 5; url = ../../index.html");
 } else {

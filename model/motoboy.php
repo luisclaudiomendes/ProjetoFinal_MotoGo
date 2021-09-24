@@ -1,5 +1,5 @@
 <?php
-include "../bd/conexaoBD.php";
+include 'C:\xampp\htdocs\ProjetoFinal_MotoGo\bd\conexaoBD.php'; 
 
 function inserirMotoboy($nome, $cpf, $cnh, $telefone, $email, $endereco, $placa, $cor)
 {
@@ -9,11 +9,11 @@ function inserirMotoboy($nome, $cpf, $cnh, $telefone, $email, $endereco, $placa,
 	$prepara->execute();
 }
 
-function atualizarMotoboy($nome, $cpf, $cnh, $telefone, $email, $endereco, $placa, $cor, $id)
+function atualizarMotoboy($nome, $cpf, $cnh, $telefone, $email, $endereco, $placa, $cor, $id_motoboy)
 {
 	global $conexao;
 	$prepara = $conexao->prepare("UPDATE motoboy SET nome_completo = ?, cpf = ?, cnh = ?, telefone = ?, email = ?, endereco = ?, placa_da_moto = ?, cor_da_moto = ? WHERE id_motoboy = ?");
-	$prepara->bind_param("siiissssi", $nome, $cpf, $cnh, $telefone, $email, $endereco, $placa, $cor, $id);
+	$prepara->bind_param("siiissssi", $nome, $cpf, $cnh, $telefone, $email, $endereco, $placa, $cor, $id_motoboy);
 	$prepara->execute();
 }
 

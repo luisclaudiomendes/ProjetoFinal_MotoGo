@@ -1,6 +1,5 @@
 <?php
-
-include "../bd/conexaoBD.php";
+include 'C:\xampp\htdocs\ProjetoFinal_MotoGo\bd\conexaoBD.php'; 
 
 function inserirEmpresa($nome, $endereco, $telefone, $cnpj, $descricao)
 {

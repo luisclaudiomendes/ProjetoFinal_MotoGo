@@ -1,10 +1,6 @@
 <?php
 $erros = "";
 
-if ($_POST["selecao"] == "null") {
-  $erros .= "Você deve selecionar um motoboy! <br>";
-}
-
 if (!isset($_POST["nome"]) || !isset($_POST["endereco"]) || !isset($_POST["telefone"]) || !isset($_POST["cpf"]) || !isset($_POST["email"]) || !isset($_POST["cnh"])) {
   $erros .= "Todos os campos devem ser preenchidos! <br>";
 }
@@ -35,11 +31,12 @@ if (isset($_POST["idOculto"])) {
   atualizarMotoboy($_POST["nome"], $_POST["cpf"], $_POST["cnh"], $_POST["telefone"], $_POST["email"], $_POST["endereco"], $_POST["placa"], $_POST["cor"], $_POST["idOculto"]);
   echo "Atualização feita com sucesso! <br>";
   echo "Você será redirecionado para a página inicial do sistema! <br>";
-  header("refresh: 5; url = ../../index.html");
+  echo $_POST["idOculto"];
+  //header("refresh: 5; url = ../../index.html");
 } else {
   require_once "../../../model/motoboy.php";
   inserirMotoboy($_POST["nome"], $_POST["cpf"], $_POST["cnh"], $_POST["telefone"], $_POST["email"], $_POST["endereco"], $_POST["placa"], $_POST["cor"]);
   echo "Cadastro efetuado com sucesso! <br>";
   echo "Você será redirecionado para a página inicial do sistema! <br>";
-  header("refresh:5;url=../../index.html");
+  //header("refresh:5;url=../../index.html");
 }

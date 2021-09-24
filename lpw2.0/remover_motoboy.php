@@ -93,7 +93,7 @@
   </form><!-- Fim Formulário Motoboy -->
 
   <?php
-  if ($_POST["motoboyEscolhido"] !== 'null') {
+  if (isset($_POST["motoboyEscolhido"])) {
     require_once "../model/motoboy.php";
     excluirMotoboy($_POST["motoboyEscolhido"]);
     echo '<div class="container mt-5 mb-5">';

@@ -88,13 +88,13 @@
       }
       ?>
       <select><br>
-        <button class="btn btn-info mt-5" type="submit">Consultar</button>
+      <button class="btn btn-info mt-5" type="submit">Consultar</button>
 
   </form><!-- Fim Formulário Motoboy -->
 
 
   <?php
-  if (!empty($_POST["empresaEscolhida"])) {
+  if (isset($_POST["motoboyEscolhido"])) {
     require_once "../model/motoboy.php";
     $motoboy = selecionarMotoboyId($_POST["motoboyEscolhido"]);
 

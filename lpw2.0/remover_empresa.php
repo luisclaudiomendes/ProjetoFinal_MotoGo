@@ -91,7 +91,7 @@
   </form><!-- Fim Formulário Empresas -->
 
   <?php
-  if ($_POST["empresaEscolhida"] !== 'null') {
+  if (isset($_POST["empresaEscolhida"])) {
     require_once "../model/empresa.php";
     excluirEmpresa($_POST["empresaEscolhida"]);
     echo '<div class="container mt-5 mb-5">';
