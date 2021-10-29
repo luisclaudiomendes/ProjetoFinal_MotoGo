@@ -29,7 +29,7 @@
   <div class="mb-5 pt-5 pb-5 bg-dark">
     <!-- Início Título -->
     <div class="container">
-      <h2 class="display-4 text-light">Relatório: Todas Entregas Feitas (Recentes - Antigas)</h2>
+      <h2 class="display-4 text-light">Todas Entregas Feitas (Recentes - Antigas)</h2>
     </div>
   </div><!-- Fim Título -->
 

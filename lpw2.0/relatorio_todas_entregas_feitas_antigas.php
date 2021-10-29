@@ -29,11 +29,22 @@
   <div class="mb-5 pt-5 pb-5 bg-dark">
     <!-- Início Título -->
     <div class="container">
-      <h2 class="display-4 text-light">Relatório: Todas Entregas Feitas (Antigas - Recente)</h2>
+      <h2 class="display-4 text-light">Todas Entregas Feitas (Antigas - Recente)</h2>
     </div>
   </div><!-- Fim Título -->
 
   <div class="container">
+
+    <h3 class="text-center"> Animais mais preferidos </h3>
+   <?php /*
+    require_once "model/relatorio.php";
+    $relatorio = entregas_recentes_antigas();
+    foreach ($relatorio as $r) {
+      echo "Tipo: " . $r->tipo . " -> ";
+      echo "Quantidade: " . $r->quantidade . "<br>";
+      echo "<hr>";
+    }
+    */?>
 
   </div>
 
