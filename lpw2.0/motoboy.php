@@ -102,7 +102,7 @@
     <div align="center" class="col-lg-12 p-4 ml-auto mt-2">
       <h3> Deseja saber mais sobre as entregas? </h3>
       <p class="mt-2" class="text-center">Clique no botão abaixo!</p>
-      <a class="btn btn-info  mt-2" href="entrega.html">Clique aqui</a>
+      <a class="btn btn-info  mt-2" href="entrega.php">Clique aqui</a>
     </div>
   </div><!-- Fim Bloco Entregas -->
 
