@@ -39,7 +39,7 @@
    <?php 
     require_once "C:/xampp/htdocs/ProjetoFinal_MotoGo/model/relatorios.php";
     $relatorio = entregas_recentes_antigas();
-    foreach ($relatorio as $r)
+    foreach ($relatório as $r)
    {
       echo "Motoboy: " . $r->motoboy . " -> ";
       echo "Empresa: " . $r->produtoNome . "<br>";
