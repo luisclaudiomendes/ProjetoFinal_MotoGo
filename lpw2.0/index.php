@@ -68,7 +68,7 @@
       <div class="text-center">
         <h3>Deseja solicitar uma entrega? </h3>
         <p class="mt-3">Faça o pedido abaixo:</p>
-        <a class="btn btn-info  mt-3" href="entrega.html">Solicitar Entrega</a>
+        <a class="btn btn-info  mt-3" href="entrega.php">Solicitar Entrega</a>
       </div>
     </div><!-- Fim Bloco Solicitar Pedido -->
     <div class="col-lg-4 p-5 ml-auto mt-2" style="background-color: #EBFDFE;">
@@ -89,7 +89,7 @@
     <div align="center" class="col-lg-12 p-4 ml-auto mt-2" class="text-center">
       <h3> Quem somos? </h3>
       <p class="mt-2" class="text-center">Clique abaixo e conheça um pouco sobre os criadores da MotoGo!</p>
-      <a class="btn btn-info  mt-2" href="quem_somos.html">Clique aqui</a>
+      <a class="btn btn-info  mt-2" href="quem_somos.php">Clique aqui</a>
     </div>
   </div><!-- Fim Bloco para o Quem Somos -->
 

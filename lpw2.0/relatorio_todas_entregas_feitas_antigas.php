@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  if(!isset($_SESSION["email"])){
-    header("Location: login.html");
-  }
+session_start();
+if (!isset($_SESSION["email"])) {
+  header("Location: login.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,22 +36,26 @@
   <div class="mb-5 pt-5 pb-5 bg-dark">
     <!-- Início Título -->
     <div class="container">
-      <h2 class="display-4 text-light">Todas Entregas Feitas (Antigas - Recente)</h2>
+      <h2 class="display-4 text-light">Todas Entregas Feitas (Antigas - Recentes)</h2>
     </div>
   </div><!-- Fim Título -->
 
   <div class="container">
 
-    <h3 class="text-center"> Todas entregas feitas Antiga - Recente </h3>
-   <?php 
-    require_once "C:/xampp/htdocs/ProjetoFinal_MotoGo/model/relatorios.php";
-    $relatorio = entregas_recentes_antigas();
-    foreach ($relatorio as $r)
-   {
-      echo "Motoboy: " . $r->motoboy . " -> ";
-      echo "Empresa: " . $r->produtoNome . "<br>";
-			echo "<hr>";	
-  }
+    <h3 class="display-4 mb-5" style="font-size: 2.5rem;"> Todas entregas feitas Antiga - Recente </h3>
+    <?php
+    require_once 'C:/xampp/htdocs/ProjetoFinal_MotoGo/model/relatorios.php';
+    $relatorio = entregas_antigas_recentes();
+    foreach ($relatorio as $r) {
+      echo "Motoboy: " . $r->motoboy . " <br> ";
+      echo "Empresa: " . $r->empresa . "<br>";
+      echo "Produto: " . $r->produtoNome . "<br>";
+      echo "Data: " . $r->dataEntrega . "<br>";
+      echo "Endereço de Retirada: " . $r->enderecoRetirada . "<br>";
+      echo "Enderco de Entrega: " . $r->enderecoEntrega . "<br>";
+      echo "Descrição: " . $r->produtoDescricao . "<br>";
+      echo "<hr>";
+    }
     ?>
 
   </div>

@@ -3,7 +3,14 @@ include 'C:\xampp\htdocs\ProjetoFinal_MotoGo\bd\conexaoBD.php';
 
 function entregas_recentes_antigas()
 {
-  
+  global $conexao;
+  $prepara = $conexao->prepare("SELECT * FROM `entregas` ORDER BY dataEntrega DESC");
+  $prepara->execute();
+  $resultado = $prepara->get_result();
+  while ($r = $resultado->fetch_object()) {
+    $relatorios[] = $r;
+  }
+  return $relatorios;
 }
 
 function entregas_antigas_recentes()
@@ -12,10 +19,10 @@ function entregas_antigas_recentes()
   $prepara = $conexao->prepare("SELECT * FROM `entregas` ORDER BY dataEntrega");
   $prepara->execute();
   $resultado = $prepara->get_result();
-        while($r = $resultado->fetch_object()){
+  while ($r = $resultado->fetch_object()) {
     $relatorios[] = $r;
-        }
-        return $relatorios;
+  }
+  return $relatorios;
 }
 
 

@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  if(!isset($_SESSION["email"])){
-    header("Location: login.html");
-  }
+session_start();
+if (!isset($_SESSION["email"])) {
+  header("Location: login.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +41,22 @@
   </div><!-- Fim Título -->
 
   <div class="container">
+
+    <h3 class="display-4 mb-5" style="font-size: 2.5rem;"> Todas entregas feitas Recentes - Antigas </h3>
+    <?php
+    require_once 'C:/xampp/htdocs/ProjetoFinal_MotoGo/model/relatorios.php';
+    $relatorio = entregas_recentes_antigas();
+    foreach ($relatorio as $r) {
+      echo "Motoboy: " . $r->motoboy . " <br> ";
+      echo "Empresa: " . $r->empresa . "<br>";
+      echo "Produto: " . $r->produtoNome . "<br>";
+      echo "Data: " . $r->dataEntrega . "<br>";
+      echo "Endereço de Retirada: " . $r->enderecoRetirada . "<br>";
+      echo "Enderco de Entrega: " . $r->enderecoEntrega . "<br>";
+      echo "Descrição: " . $r->produtoDescricao . "<br>";
+      echo "<hr>";
+    }
+    ?>
 
   </div>
 
