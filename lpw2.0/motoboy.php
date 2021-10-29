@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<!-- teste -->
-
 <head>
-  <title>Empresa - MotoGo</title>
+  <title>Motoboy - MotoGo</title>
 
   <!-- Meta tags Obrigatórias -->
   <meta charset="utf-8">
@@ -26,52 +24,13 @@
 
 <body>
   <header>
-    <!-- Início Cabeçalho -->
-    <nav class="navbar navbar-expand-sm navbar-light pt-4 pb-4">
-      <div class="container">
-
-        <a href="index.html" class="navbar-brand d-flex align-items-end">
-          <!-- Início Logo -->
-          <h1 class=" d-flex align-items-end mr-2" style="color: #036970;">
-            <span class="mr-2">MotoGo</span>
-            <img style="width: 60px;" src="img/logo.png" alt="">
-          </h1>
-        </a><!-- Fim Logo -->
-
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
-          <!-- Início Botão Menu -->
-          <span class="navbar-toggler-icon"></span>
-        </button><!-- Fim Botão Menu -->
-
-        <div class="collapse navbar-collapse" id="nav-principal">
-          <!-- Início Itens Menu -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-3">
-              <a class="nav-link " href="index.html">Página Inicial</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link active" href="empresas.html">Empresas</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="motoboy.html">Motoboy</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="quem_somos.html">Quem Somos</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-info ml-4" href="login.html">Login</a>
-            </li>
-          </ul>
-        </div><!-- Início Itens Menu -->
-
-      </div>
-    </nav>
+    <?php include 'menu.php' ?>
   </header><!-- Fim Cabeçalho -->
 
   <div class="mb-5 pt-5 pb-5 bg-dark">
     <!-- Início Título -->
     <div class="container">
-      <h2 class="display-4 text-light">Empresas</h2>
+      <h2 class="display-4 text-light">Motoboy</h2>
     </div>
   </div><!-- Fim Título -->
 
@@ -89,7 +48,7 @@
           </h3>
         </div>
         <div class="mt-5">
-          <a class="btn btn-info" href="cadastro_empresa.php"> Cadastrar Empresa</a>
+          <a class="btn btn-info" href="cadastro_motoboy.php"> Cadastrar Motoboy</a>
         </div>
       </div><!-- Fim Cadastrar -->
 
@@ -102,7 +61,7 @@
           </h3>
         </div>
         <div class="mt-5">
-          <a class="btn btn-info" href="consultar_empresa.php"> Consultar Empresa</a>
+          <a class="btn btn-info" href="consultar_motoboy.php"> Consultar Motoboy</a>
         </div>
       </div><!-- Fim Consultar -->
     </div><!-- Fim Cadastrar e Consultar -->
@@ -118,7 +77,7 @@
           </h3>
         </div>
         <div class="mt-5">
-          <a class="btn btn-info" href="atualizar_empresa.php"> Atualizar Empresa</a>
+          <a class="btn btn-info" href="atualizar_motoboy.php"> Atualizar Motoboy</a>
         </div>
       </div><!-- Fim Atualizar -->
 
@@ -131,13 +90,25 @@
           </h3>
         </div>
         <div class="mt-5">
-          <a class="btn btn-info" href="remover_empresa.php"> Remover Empresa</a>
+          <a class="btn btn-info" href="remover_motoboy.php"> Remover Motoboy</a>
         </div>
       </div><!-- Fim Remover -->
     </div><!-- Fim Atualizar e Remover -->
   </div>
 
-  <footer class=" pt-5 pb-5 bg-333333">
+  <hr>
+
+  <div>
+    <!-- Início Bloco Entregas -->
+    <div align="center" class="col-lg-12 p-4 ml-auto mt-2">
+      <h3> Deseja saber mais sobre as entregas? </h3>
+      <p class="mt-2" class="text-center">Clique no botão abaixo!</p>
+      <a class="btn btn-info  mt-2" href="entrega.html">Clique aqui</a>
+    </div>
+  </div><!-- Fim Bloco Entregas -->
+
+
+  <footer class="mt-4 pt-5 pb-5 bg-333333">
     <!-- Início Rodapé -->
     <div class="container">
       <div class="text-center text-light">
@@ -151,7 +122,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery-3.6.0.min.js"></script>
 
-  <!-- JavaScript (Opcional) -->
+  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

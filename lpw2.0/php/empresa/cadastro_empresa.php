@@ -28,7 +28,7 @@ if (strlen($_POST["endereco"]) < 10) {
 
 if (isset($_POST["idOculto"])) {
     require_once "../../../model/empresa.php";
-    AtualizarEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"]);
+    AtualizarEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"], $_POST["idOculto"]);
     echo "Atualização efetuada com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
     header("refresh:5;url=../../index.html");

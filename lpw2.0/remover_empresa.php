@@ -23,46 +23,7 @@
 
 <body>
   <header>
-    <!-- Início Cabeçalho -->
-    <nav class="navbar navbar-expand-sm navbar-light pt-4 pb-4">
-      <div class="container">
-
-        <a href="index.html" class="navbar-brand d-flex align-items-end">
-          <!-- Início Logo -->
-          <h1 class=" d-flex align-items-end mr-2" style="color: #036970;">
-            <span class="mr-2">MotoGo</span>
-            <img style="width: 60px;" src="img/logo.png" alt="">
-          </h1>
-        </a><!-- Fim Logo -->
-
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
-          <!-- Início Botão Menu -->
-          <span class="navbar-toggler-icon"></span>
-        </button><!-- Fim Botão Menu -->
-
-        <div class="collapse navbar-collapse" id="nav-principal">
-          <!-- Início Itens Menu -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-3">
-              <a class="nav-link " href="index.html">Página Inicial</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link active" href="empresas.html">Empresas</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link " href="motoboy.html">Motoboy</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="quem_somos.html">Quem Somos</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-info ml-4" href="login.html">Login</a>
-            </li>
-          </ul>
-        </div><!-- Início Itens Menu -->
-
-      </div>
-    </nav>
+    <?php include 'menu.php' ?>
   </header><!-- Fim Cabeçalho -->
 
   <div class="mb-5 pt-5 pb-5 bg-dark">

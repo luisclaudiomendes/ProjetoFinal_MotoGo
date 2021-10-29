@@ -1,7 +1,7 @@
 <?php
 $erros = "";
 
-if ($_POST["selecao"] == "null") {
+/*if ($_POST["selecao"] == "null") {
     $erros .= "Você deve selecionar uma entrega! <br>";
 }
 
@@ -23,10 +23,12 @@ if (strlen($_POST["endereço"]) < 10) {
 
 if (strlen($_POST["entrega"]) < 10) {
     $erros .= "Coloque o endereço de entrega completo! <br>";
-}
+}*/
 
 //redirecionamento
-if (strlen($erros) == 0) {
+if (true) {
+    require_once "../../../model/entregas.php";
+    atualizarEntrega($_POST["entregaEscolhida"], $_POST["empresaEscolhida"], $_POST["produtoNome"], $_POST["enderecoRetirada"], $_POST["enderecoEntrega"], $_POST["dataEntrega"], $_POST["horaRetirada"], $_POST["horaEntrega"], $_POST["descricao"], $_POST["IdOculto"]);
     echo "Atualização feita com sucesso! <br>";
     header("refresh: 5; url = ../../index.html");
 } else {

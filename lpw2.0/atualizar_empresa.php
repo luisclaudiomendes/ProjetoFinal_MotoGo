@@ -23,142 +23,104 @@
 
 <body>
   <header>
-    <!-- Início Cabeçalho -->
-    <nav class="navbar navbar-expand-sm navbar-light pt-4 pb-4">
+    <header>
+      <?php include 'menu.php' ?>
+    </header><!-- Fim Cabeçalho -->
+
+    <div class="mb-5 pt-5 pb-5 bg-dark">
+      <!-- Início Título -->
       <div class="container">
-
-        <a href="index.html" class="navbar-brand d-flex align-items-end">
-          <!-- Início Logo -->
-          <h1 class=" d-flex align-items-end mr-2" style="color: #036970;">
-            <span class="mr-2">MotoGo</span>
-            <img style="width: 60px;" src="img/logo.png" alt="">
-          </h1>
-        </a><!-- Fim Logo -->
-
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
-          <!-- Início Botão Menu -->
-          <span class="navbar-toggler-icon"></span>
-        </button><!-- Fim Botão Menu -->
-
-        <div class="collapse navbar-collapse" id="nav-principal">
-          <!-- Início Itens Menu -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-3">
-              <a class="nav-link " href="index.html">Página Inicial</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link active" href="empresas.html">Empresas</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link " href="motoboy.html">Motoboy</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="quem_somos.html">Quem Somos</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-info ml-4" href="login.html">Login</a>
-            </li>
-          </ul>
-        </div><!-- Início Itens Menu -->
-
+        <h2 class="display-4 text-light">Atualizar Empresas</h2>
       </div>
-    </nav>
-  </header><!-- Fim Cabeçalho -->
+    </div><!-- Fim Título -->
 
-  <div class="mb-5 pt-5 pb-5 bg-dark">
-    <!-- Início Título -->
-    <div class="container">
-      <h2 class="display-4 text-light">Atualizar Empresas</h2>
-    </div>
-  </div><!-- Fim Título -->
-
-  <form class="container form-group" method="POST" action="#">
-    <!-- Início Formulário Empresas -->
-
-    <div class="mt-2">
-      <label for="empresaEscolhida" class="form-label"> Escolha qual empresa deseja atualizar: </label>
-      <select class="custom-select" id="empresaEscolhida" name="empresaEscolhida">
-        <option value="null" selected>-- Selecione uma empresa --</option>
-
-        <?php
-        require_once "../model/empresa.php";
-        $empresas = selecionarTodasEmpresas();
-        foreach ($empresas as $a) {
-          echo "<option value = $a->id_empresa>" . $a->nome . "</option>";
-        }
-        ?>
-      </select><br>
-    </div>
-
-    <button type="submit" class="btn btn-info mb-5 mt-5">Selecionar</button>
-  </form>
-
-  <?php
-  if (isset($_POST["empresaEscolhida"])) {
-    require_once "../model/empresa.php";
-    $empresa = selecionarEmpresaId($_POST["empresaEscolhida"]);
-
-  ?>
-
-    <form class="container form-group" method="POST" action="php/empresa/atualizar_empresa.php">
-      <!-- Início Formulário Empresa -->
-
-
-      <div class="row">
-        <div class="col-lg-6 mt-2">
-          <input class="form-control" type="hidden" name="idOculto" id="idOculto" value="<?php echo $empresa->id_empresa; ?>">
-          <label for="nome">Nome da empresa</label>
-          <input class="form-control" type="text" name="nome" id="nome" value="<?php echo $empresa->nome; ?>">
-        </div>
-
-        <div class="col-lg-6 mt-2">
-          <label for="endereco">Endereço</label>
-          <input class="form-control" type="text" name="endereco" id="endereco" value="<?php echo $empresa->endereco; ?>">
-        </div>
-      </div>
-
-      <div class=" mt-2">
-        <label for="telefone">Telefone</label>
-        <input class="form-control" type="text" name="telefone" id="telefone" value="<?php echo $empresa->telefone; ?>">
-      </div>
-
-      <div class=" mt-2">
-        <label for="cnpj">CNPJ</label>
-        <input class="form-control" type="text" name="cnpj" id="cnpj" value="<?php echo $empresa->cnpj; ?>">
-      </div>
+    <form class="container form-group" method="POST" action="#">
+      <!-- Início Formulário Empresas -->
 
       <div class="mt-2">
-        <label for="descricao">Descrição</label>
-        <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao"><?php echo $empresa->descricao; ?></textarea>
+        <label for="empresaEscolhida" class="form-label"> Escolha qual empresa deseja atualizar: </label>
+        <select class="custom-select" id="empresaEscolhida" name="empresaEscolhida">
+          <option value="null" selected>-- Selecione uma empresa --</option>
+
+          <?php
+          require_once "../model/empresa.php";
+          $empresas = selecionarTodasEmpresas();
+          foreach ($empresas as $a) {
+            echo "<option value = $a->id_empresa>" . $a->nome . "</option>";
+          }
+          ?>
+        </select><br>
       </div>
 
-      <button class="btn btn-info mb-5 mt-5" type="submit">Atualizar</button>
+      <button type="submit" class="btn btn-info mb-5 mt-5">Selecionar</button>
+    </form>
 
-    </form><!-- Fim Formulário Empresa -->
+    <?php
+    if (isset($_POST["empresaEscolhida"])) {
+      require_once "../model/empresa.php";
+      $empresa = selecionarEmpresaId($_POST["empresaEscolhida"]);
 
-  <?php
-  }
-  ?>
+    ?>
 
-  <footer class="pt-5 pb-5 bg-333333 ">
-    <!-- Início Rodapé -->
-    <div class="container">
-      <div class="text-center text-light">
-        Copyright © 2021 | MotoGo
+      <form class="container form-group" method="POST" action="php/empresa/atualizar_empresa.php">
+        <!-- Início Formulário Empresa -->
+
+
+        <div class="row">
+          <div class="col-lg-6 mt-2">
+            <input class="form-control" type="hidden" name="idOculto" id="idOculto" value="<?php echo $empresa->id_empresa; ?>">
+            <label for="nome">Nome da empresa</label>
+            <input class="form-control" type="text" name="nome" id="nome" value="<?php echo $empresa->nome; ?>">
+          </div>
+
+          <div class="col-lg-6 mt-2">
+            <label for="endereco">Endereço</label>
+            <input class="form-control" type="text" name="endereco" id="endereco" value="<?php echo $empresa->endereco; ?>">
+          </div>
+        </div>
+
+        <div class=" mt-2">
+          <label for="telefone">Telefone</label>
+          <input class="form-control" type="text" name="telefone" id="telefone" value="<?php echo $empresa->telefone; ?>">
+        </div>
+
+        <div class=" mt-2">
+          <label for="cnpj">CNPJ</label>
+          <input class="form-control" type="text" name="cnpj" id="cnpj" value="<?php echo $empresa->cnpj; ?>">
+        </div>
+
+        <div class="mt-2">
+          <label for="descricao">Descrição</label>
+          <textarea rows="5" cols="30" class="form-control" type="text" name="descricao" id="descricao"><?php echo $empresa->descricao; ?></textarea>
+        </div>
+
+        <button class="btn btn-info mb-5 mt-5" type="submit">Atualizar</button>
+
+      </form><!-- Fim Formulário Empresa -->
+
+    <?php
+    }
+    ?>
+
+    <footer class="pt-5 pb-5 bg-333333 ">
+      <!-- Início Rodapé -->
+      <div class="container">
+        <div class="text-center text-light">
+          Copyright © 2021 | MotoGo
+        </div>
       </div>
-    </div>
-  </footer><!-- Fim Rodapé -->
+    </footer><!-- Fim Rodapé -->
 
-  <!-- JavaSript -->
-  <script src="jsgeral.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- JavaSript -->
+    <script src="jsgeral.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 
-  <!-- JavaScript (Opcional) -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

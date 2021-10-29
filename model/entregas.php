@@ -6,14 +6,14 @@ function inserirEntrega($id_empresa, $id_motoboy, $empresa, $motoboy, $produto, 
 	global $conexao;
 	$prepara = $conexao->prepare("INSERT INTO entregas (id_empresa, id_motoboy, empresa, motoboy, produtoNome, enderecoRetirada, enderecoEntrega, dataEntrega, horaRetirada, horaEntrega, produtoDescricao) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	$prepara->bind_param("iisssssssss", $id_empresa, $id_motoboy, $empresa, $motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $data, $horaRetirada, $horaEntrega, $descricao);
-	$prepara->execute();
+	$prepara->execute();	
 }
 
-function atualizarEntrega($id_empresa, $id_motoboy, $produto, $endereço, $entrega, $data, $horario, $hrentrega, $descricao, $id)
+function atualizarEntrega($id_empresa, $id_motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $dataEntrega, $horaRetirada, $horaEntrega, $descricao, $id)
 {
 	global $conexao;
-	$prepara = $conexao->prepare("UPDATE entregas SET id_empresa = ?, id_motoboy = ?, produto = ?, endereço = ?, entrega = ?, data = ?, horario = ?, hrentrega = ?, descricao = ?, WHERE id = ?");
-	$prepara->bind_param("iisssssssi", $id_empresa, $id_motoboy, $produto, $endereço, $entrega, $data, $horario, $hrentrega, $descricao, $id);
+	$prepara = $conexao->prepare("UPDATE entregas SET id_empresa = ?, id_motoboy = ?, produtoNome = ?, enderecoRetirada = ?, enderecoEntrega = ?, dataEntrega = ?, horaRetirada = ?, horaEntrega = ?, produtoDescricao = ?, WHERE id = ?");
+	$prepara->bind_param("iisssssssi", $id_empresa, $id_motoboy, $produto, $enderecoRetirada, $enderecoEntrega, $dataEntrega, $horaRetirada, $horaEntrega, $descricao, $id);
 	$prepara->execute();
 }
 
