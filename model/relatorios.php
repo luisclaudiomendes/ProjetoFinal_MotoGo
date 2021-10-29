@@ -1,6 +1,30 @@
 <?php
 include 'C:\xampp\htdocs\ProjetoFinal_MotoGo\bd\conexaoBD.php';
 
+function empresas_mais_solicitaram_entregas()
+{
+  global $conexao;
+  $prepara = $conexao->prepare("SELECT empresa, COUNT(id) AS 'solicitacoes' FROM entregas GROUP BY empresa ORDER BY id DESC");
+  $prepara->execute();
+  $resultado = $prepara->get_result();
+  while ($r = $resultado->fetch_object()) {
+    $relatorios[] = $r;
+  }
+  return $relatorios;
+}
+
+function empresas_menos_solicitaram_entregas()
+{
+  global $conexao;
+  $prepara = $conexao->prepare("SELECT empresa, COUNT(id) AS 'solicitacoes' FROM entregas GROUP BY empresa ORDER BY id");
+  $prepara->execute();
+  $resultado = $prepara->get_result();
+  while ($r = $resultado->fetch_object()) {
+    $relatorios[] = $r;
+  }
+  return $relatorios;
+}
+
 function entregas_recentes_antigas()
 {
   global $conexao;
@@ -29,29 +53,9 @@ function entregas_antigas_recentes()
 
 
 
-function animais_mais_colocados_adocao()
-{
-  global $conexao;
-  $prepara = $conexao->prepare("SELECT tipo, COUNT(tipo) AS quantidade FROM animal GROUP BY tipo ORDER BY COUNT(tipo) DESC");
-  $prepara->execute();
-  $resultado = $prepara->get_result();
-  while ($r = $resultado->fetch_object()) {
-    $relatorios[] = $r;
-  }
-  return $relatorios;
-}
 
-function animais_menos_colocados_adocao()
-{
-  global $conexao;
-  $prepara = $conexao->prepare("SELECT tipo, COUNT(tipo) AS quantidade FROM animal GROUP BY tipo ORDER BY COUNT(tipo)");
-  $prepara->execute();
-  $resultado = $prepara->get_result();
-  while ($r = $resultado->fetch_object()) {
-    $relatorios[] = $r;
-  }
-  return $relatorios;
-}
+
+
 
 function pessoas_mais_adotam()
 {

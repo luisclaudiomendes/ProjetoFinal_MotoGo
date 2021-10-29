@@ -43,8 +43,8 @@
       <a class="btn btn-block btn-info btn-lg mb-3" href="">Empresas Cadastradas</a>
       <a class="btn btn-block btn-info btn-lg mb-3" href="">Motoboys mais solicitados</a>
       <a class="btn btn-block btn-info btn-lg mb-3" href="">Motoboys menos solicitados</a>
-      <a class="btn btn-block btn-info btn-lg mb-3" href="">Empresas que mais solicitaram entregas</a>
-      <a class="btn btn-block btn-info btn-lg mb-3" href="">Empresas que menos solicitaram entrega</a>
+      <a class="btn btn-block btn-info btn-lg mb-3" href="relatorio_empresas_mais_solicitaram_entregas.php">Empresas que mais solicitaram entregas</a>
+      <a class="btn btn-block btn-info btn-lg mb-3" href="relatorio_empresas_menos_solicitaram_entregas.php">Empresas que menos solicitaram entrega</a>
       <a class="btn btn-block btn-info btn-lg mb-3" href="relatorio_todas_entregas_feitas_recentes.php">Todas entregas feitas (Recente - Antigo)</a>
       <a class="btn btn-block btn-info btn-lg mb-3" href="relatorio_todas_entregas_feitas_antigas.php">Todas entregas feitas (Antigo - Recente)</a>
 
