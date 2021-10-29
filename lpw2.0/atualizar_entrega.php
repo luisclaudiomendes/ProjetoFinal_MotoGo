@@ -134,14 +134,9 @@
   }
   ?>
 
-  <footer class=" mt-4 pt-5 pb-5 bg-333333">
-    <!-- Início Rodapé -->
-    <div class="container">
-      <div class="text-center text-light">
-        Copyright © 2021 | MotoGo
-      </div>
-    </div>
-  </footer><!-- Fim Rodapé -->
+  <div>
+    <?php include 'footer.php' ?>
+  </div>
 
   <!-- JavaSript -->
   <script src="jsgeral.js"></script>

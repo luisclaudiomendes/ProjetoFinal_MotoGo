@@ -33,7 +33,8 @@
     </div>
   </div><!-- Fim Título -->
 
-  <form class="container form-group" method="POST" action="#"><!-- Início Formulário Empresas -->
+  <form class="container form-group" method="POST" action="#">
+    <!-- Início Formulário Empresas -->
 
     <label for="empresaEscolhida" class="form-label"> Escolha qual empresa deseja excluir: </label>
     <select class="custom-select" name="empresaEscolhida" id="empresaEscolhida">
@@ -63,14 +64,9 @@
   }
   ?>
 
-  <footer class=" pt-5 pb-5 bg-333333">
-    <!-- Início Rodapé -->
-    <div class="container">
-      <div class="text-center text-light">
-        Copyright © 2021 | MotoGo
-      </div>
-    </div>
-  </footer><!-- Fim Rodapé -->
+  <div>
+    <?php include 'footer.php' ?>
+  </div>
 
   <!-- JavaSript -->
   <script src="jsgeral.js"></script>

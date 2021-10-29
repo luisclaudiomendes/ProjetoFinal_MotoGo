@@ -33,7 +33,8 @@
     </div>
   </div><!-- Fim Título -->
 
-  <form class="container form-group" method="POST" action="#"><!-- Início Formulário Entrega -->
+  <form class="container form-group" method="POST" action="#">
+    <!-- Início Formulário Entrega -->
 
     <label for="entregaEscolhida" class="form-label"> Escolha qual entrega deseja excluir: </label>
     <select class="custom-select" name="entregaEscolhida" id="entregaEscolhida">
@@ -44,7 +45,7 @@
       require_once "../model/entregas.php";
       $entregas = selecionarTodasEntregas();
       foreach ($entregas as $ad) {
-        echo "<option value=$ad->id>". "Entrega " . $ad->id ."</option>";
+        echo "<option value=$ad->id>" . "Entrega " . $ad->id . "</option>";
         echo "<hr>";
       }
       ?>
@@ -62,14 +63,9 @@
   }
   ?>
 
-  <footer class=" mt-4 pt-5 pb-5 bg-333333">
-    <!-- Início Rodapé -->
-    <div class="container">
-      <div class="text-center text-light">
-        Copyright © 2021 | MotoGo
-      </div>
-    </div>
-  </footer><!-- Fim Rodapé -->
+  <div>
+    <?php include 'footer.php' ?>
+  </div>
 
   <!-- JavaSript -->
   <script src="jsgeral.js"></script>
