@@ -8,8 +8,19 @@ function entregas_recentes_antigas()
 
 function entregas_antigas_recentes()
 {
-  
+  global $conexao;
+  $prepara = $conexao->prepare("SELECT * FROM `entregas` ORDER BY dataEntrega");
+  $prepara->execute();
+  $resultado = $prepara->get_result();
+        while($r = $resultado->fetch_object()){
+    $relatorios[] = $r;
+        }
+        return $relatorios;
 }
+
+
+
+
 
 function animais_mais_colocados_adocao()
 {
