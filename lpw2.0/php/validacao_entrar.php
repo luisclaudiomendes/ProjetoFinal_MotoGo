@@ -18,7 +18,7 @@ if (strlen($erros) == 0 and $_POST["email"] == "adm@gmail.com" and $_POST["senha
   $_SESSION["email"] = $_POST["email"];
   echo "Login efetuado com sucesso! <br>";
   echo "Você será redirecionado para a página de relatórios. <br>";
-  header("refresh: 5; url = ../relatorios.html");
+  header("refresh: 5; url = ../relatorios.php");
 } else {
   if($_POST["email"] != "adm@gmail.com" or $_POST["senha"] != "123456")
     $erros .= 'E-mail e/ou senha inválidos! <br>';
