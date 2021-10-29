@@ -40,13 +40,14 @@
     <div class="container row mt-5 ml-auto mr-auto">
       <!-- Início Bloco de Botões dos Relatórios -->
 
-      <button type="button" class="btn btn-info btn-lg btn-block">Motoboys Cadastrados</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Empresas Cadastradas</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Motoboys mais solicitados</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Motoboys menos solicitados</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Empresas que mais solicitaram entregas</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Empresas que menos solicitaram entregas</button>
-      <button type="button" class="btn btn-info btn-lg btn-block">Média de Entregas por Mês</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Motoboys Cadastrados</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Empresas Cadastradas</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Motoboys mais solicitados</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Motoboys menos solicitados</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Empresas que mais solicitaram entregas</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Empresas que menos solicitaram entregas</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Todas entregas feitas (Recente - Antigo)</button>
+      <button type="button" class="btn btn-info btn-lg btn-block mb-3">Todas entregas feitas (Antigo - Recente)</button>
 
     </div><!-- Fim Bloco de Botões dos Relatórios -->
   </div>
