@@ -16,8 +16,7 @@ function entregas_antigas_recentes()
     $relatorios[] = $r;
         }
         return $relatorios;
-
-      }
+}
 
 
 

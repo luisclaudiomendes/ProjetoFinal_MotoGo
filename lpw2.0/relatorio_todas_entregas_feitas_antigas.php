@@ -42,16 +42,17 @@
 
   <div class="container">
 
-    <h3 class="text-center"> Animais mais preferidos </h3>
-   <?php /*
-    require_once "model/relatorio.php";
+    <h3 class="text-center"> Todas entregas feitas Antiga - Recente </h3>
+   <?php 
+    require_once "C:/xampp/htdocs/ProjetoFinal_MotoGo/model/relatorios.php";
     $relatorio = entregas_recentes_antigas();
-    foreach ($relatorio as $r) {
-      echo "Tipo: " . $r->tipo . " -> ";
-      echo "Quantidade: " . $r->quantidade . "<br>";
-      echo "<hr>";
-    }
-    */?>
+    foreach ($relatório as $r)
+   {
+      echo "Motoboy: " . $r->motoboy . " -> ";
+      echo "Empresa: " . $r->produtoNome . "<br>";
+			echo "<hr>";	
+  }
+    ?>
 
   </div>
 
