@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_POST["email"])){
-    header("Location: login.html");
-  }
-?>
-
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
