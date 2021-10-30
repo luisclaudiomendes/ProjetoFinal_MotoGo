@@ -8,9 +8,9 @@ if (!isset($_POST["nome_motoboy"])) {
 if (strlen($erros) == 0) {
   echo "Consulta efetuada com sucesso! <br>";
   echo $_POST["nome_motoboy"];
-  header("refresh: 5; url = ../../index.html");
+  header("refresh: 5; url = ../../index.php");
 } else {
   echo $erros . "<br>";
   echo "Você será redirecionado para a página de consulta. <br>";
-  header("refresh: 5; url = ../../consultar_motoboy.html");
+  header("refresh: 5; url = ../../consultar_motoboy.php");
 }

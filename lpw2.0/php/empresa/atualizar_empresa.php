@@ -26,7 +26,7 @@ if (strlen($erros) == 0) {
     require_once "../../../model/empresa.php";
     atualizarEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"], $_POST["idOculto"]);
     echo "Atualização feita com sucesso! <br>";
-    header("refresh: 5; url = ../../index.html");
+    header("refresh: 5; url = ../../index.php");
 } else {
     echo $erros . "<br>";
     echo "Você será redirecionado para a página de atualização. <br>";

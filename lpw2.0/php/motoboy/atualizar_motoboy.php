@@ -32,11 +32,11 @@ if (isset($_POST["idOculto"])) {
   echo "Atualização feita com sucesso! <br>";
   echo "Você será redirecionado para a página inicial do sistema! <br>";
   echo $_POST["idOculto"];
-  //header("refresh: 5; url = ../../index.html");
+  header("refresh: 5; url = ../../index.php");
 } else {
   require_once "../../../model/motoboy.php";
   inserirMotoboy($_POST["nome"], $_POST["cpf"], $_POST["cnh"], $_POST["telefone"], $_POST["email"], $_POST["endereco"], $_POST["placa"], $_POST["cor"]);
   echo "Cadastro efetuado com sucesso! <br>";
   echo "Você será redirecionado para a página inicial do sistema! <br>";
-  //header("refresh:5;url=../../index.html");
+  header("refresh:5;url=../../index.php");
 }

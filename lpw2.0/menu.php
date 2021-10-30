@@ -36,7 +36,7 @@
           <a class="btn btn-outline-info" style="padding: 7px 30px 7px 30px" href="login.html">Log In</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-outline-danger" style="padding: 7px 30px 7px 30px" href="#">Log Out</a>
+          <a class="btn btn-outline-danger" style="padding: 7px 30px 7px 30px" href="logout.php">Log Out</a>
         </li>
       </ul>
     </div><!-- Início Itens Menu -->

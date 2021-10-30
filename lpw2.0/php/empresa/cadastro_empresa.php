@@ -31,11 +31,11 @@ if (isset($_POST["idOculto"])) {
     AtualizarEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"], $_POST["idOculto"]);
     echo "Atualização efetuada com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
-    header("refresh:5;url=../../index.html");
+    header("refresh:5;url=../../index.php");
 } else {
     require_once "../../../model/empresa.php";
     inserirEmpresa($_POST["nome"], $_POST["endereco"], $_POST["telefone"], $_POST["cnpj"], $_POST["descricao"]);
     echo "Cadastro efetuado com sucesso! <br>";
     echo "Você será redirecionado para a página inicial do sistema! <br>";
-    header("refresh:5;url=../../index.html");
+    header("refresh:5;url=../../index.php");
 }
